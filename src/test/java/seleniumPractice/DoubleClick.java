@@ -17,22 +17,19 @@ public class DoubleClick {
 		driver.get("https://demoqa.com/buttons");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
-		
-		//Locate element to double click
-		WebElement doubleClickBtn= driver.findElement(By.id("doubleClickBtn"));
-		
-		//Scroll down
-		JavascriptExecutor js= (JavascriptExecutor) driver;
+
+		// Locate element to double click
+		WebElement doubleClickBtn = driver.findElement(By.id("doubleClickBtn"));
+
+		// Scroll down
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView", doubleClickBtn);
 		js.executeScript("window.scrollBy(0,300)");
-		
-		//Doublr click the button
-		Actions act= new Actions(driver);
+
+		// Doublr click the button
+		Actions act = new Actions(driver);
 		act.doubleClick(doubleClickBtn).build().perform();
-		act.
-		
-		Thread.sleep(3000);
-		
+
 		driver.quit();
 
 	}
